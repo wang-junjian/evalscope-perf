@@ -11,7 +11,7 @@ with open(os.path.join(this_directory, "README.md"), encoding="utf-8") as fh:
 
 setup(
     name='evalscope-perf',
-    version='0.1.6',
+    version='1.0.0',
     author = 'Junjian Wang',
     author_email = 'vwarship@163.com',
     description = '大模型性能压测可视化',
@@ -20,13 +20,16 @@ setup(
     url = 'http://www.wangjunjian.com',
     packages=find_packages(),
     install_requires=[
-        # 在这里添加你的依赖包，例如：
-        # 'requests',
+        # 在这里添加你的依赖包
         'typer',
         'pandas',
         'matplotlib',
-        # 'evalscope',  # 太大了，不建议直接依赖
+        'evalscope==0.5.5',
     ],
+    package_data={
+        'evalscope_perf': ['../fonts/*.ttc'],  # 包含字体文件
+    },
+    include_package_data=True,  # 确保包含非代码文件
     entry_points={
         'console_scripts': [
             # 在这里添加你的命令行工具，例如：

@@ -1,4 +1,4 @@
 typer
 pandas
 matplotlib
-evalscope
+evalscope==0.5.5
