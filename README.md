@@ -60,3 +60,20 @@ evalscope-perf http://127.0.0.1:1025/v1/chat/completions qwen \
 ```
 
 ![](images/mindie-910b4-deepseek-coder-6.7b-performance_metrics.png)
+
+### 沐曦 MXC500 - vLLM - Qwen2.5-7B-Instruct
+```shell
+evalscope-perf http://127.0.0.1:8000/v1/chat/completions Qwen2.5-7B-Instruct \
+    ./datasets/open_qa.jsonl \
+    --read-timeout=120 \
+    --parallels 64 \
+    --parallels 128 \
+    --parallels 150 \
+    --parallels 200 \
+    --parallels 300 \
+    --parallels 400 \
+    --parallels 512 \
+    --n 1000
+```
+
+![](images/vLLM-Qwen2.5-7B-Instruct-NUMA-performance_metrics.png)
